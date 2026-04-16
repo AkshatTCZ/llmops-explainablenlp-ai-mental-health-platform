@@ -1,5 +1,5 @@
 // API Configuration
-const FASTAPI_BASE_URL = 'http://54.90.82.205:8000/docs#/';
+const FASTAPI_BASE_URL = 'http://54.90.82.205:8000';
 const PREDICT_ENDPOINT = `${FASTAPI_BASE_URL}/predict`;
 const EXPLAIN_ENDPOINT = `${FASTAPI_BASE_URL}/explain`;
 
