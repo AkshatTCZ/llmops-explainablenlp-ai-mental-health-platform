@@ -1,12 +1,31 @@
+<<<<<<< Updated upstream
 # Environment variables
 .env
 
 # Python
+=======
+# =========================
+# ENV FILES (VERY IMPORTANT)
+# =========================
+.env
+.env.*
+apikey.txt
+
+# =========================
+# PYTHON
+# =========================
+>>>>>>> Stashed changes
 __pycache__/
 *.pyc
 
+<<<<<<< Updated upstream
 # Node
 node_modules/
+=======
+# Virtual environment
+venv/
+.venv/
+>>>>>>> Stashed changes
 
 # Model files (VERY IMPORTANT)
 model/
