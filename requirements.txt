@@ -1,0 +1,10 @@
+transformers
+datasets
+torch
+evaluate
+fastapi
+uvicorn
+requests
+python-dotenv
+shap
+numpy

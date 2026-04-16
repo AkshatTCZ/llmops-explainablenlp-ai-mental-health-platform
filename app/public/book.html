@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book of the Day - AI Mental Health Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <span>AI Mental Health Platform</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/chat" class="nav-link">Chat</a></li>
+                <li><a href="/book" class="nav-link active">Book of the Day</a></li>
+                <li><a href="/exercise" class="nav-link">Exercise of the Day</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="page-content book-page">
+        <div class="page-header">
+            <h1>📚 Book of the Day</h1>
+            <p class="page-subtitle">Daily recommendations for mental health and personal growth</p>
+        </div>
+
+        <div class="book-container">
+            <div class="book-card featured-book">
+                <div class="book-cover">
+                    <div class="book-cover-placeholder" id="bookCover">
+                        📖
+                    </div>
+                    <div class="book-badge">Today's Pick</div>
+                </div>
+                <div class="book-details">
+                    <h2 class="book-title" id="bookTitle">Loading...</h2>
+                    <p class="book-author" id="bookAuthor">Loading...</p>
+                    <div class="book-rating" id="bookRating"></div>
+                    <p class="book-description" id="bookDescription">Loading book recommendation...</p>
+                    <div class="book-tags" id="bookTags"></div>
+                    <div class="book-actions">
+                        <button class="btn btn-primary" id="refreshBookBtn">New Recommendation</button>
+                        <a href="#" class="btn btn-secondary" id="findBookBtn" target="_blank">Find This Book</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="book-info-section">
+                <h3>Why This Book?</h3>
+                <p class="book-info-text" id="bookReason">Our AI selects books based on your most frequently detected emotions from your chat sessions. This personalized recommendation is tailored to support your current emotional state.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p>&copy; 2026 AI Mental Health Platform. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="book.js"></script>
+    <script src="nav.js"></script>
+</body>
+</html>
+

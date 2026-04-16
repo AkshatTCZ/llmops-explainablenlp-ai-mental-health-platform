@@ -1,0 +1,18 @@
+# Environment variables
+.env
+
+# Python
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+
+# Model files (VERY IMPORTANT)
+model/
+*.bin
+*.pt
+
+# OS
+.DS_Store
+Thumbs.db

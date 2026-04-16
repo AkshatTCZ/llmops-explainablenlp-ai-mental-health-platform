@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise of the Day - AI Mental Health Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <span>AI Mental Health Platform</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/chat" class="nav-link">Chat</a></li>
+                <li><a href="/book" class="nav-link">Book of the Day</a></li>
+                <li><a href="/exercise" class="nav-link active">Exercise of the Day</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="page-content exercise-page">
+        <div class="page-header">
+            <h1>🧘 Exercise of the Day</h1>
+            <p class="page-subtitle">Personalized mental health exercises based on your emotional state</p>
+        </div>
+
+        <div class="exercise-container">
+            <div class="exercise-card featured-exercise">
+                <div class="exercise-header">
+                    <div class="exercise-icon" id="exerciseIcon">🧘</div>
+                    <div class="exercise-badge">Recommended for You</div>
+                </div>
+                
+                <h2 class="exercise-title" id="exerciseTitle">Loading...</h2>
+                <p class="exercise-category" id="exerciseCategory"></p>
+                <div class="exercise-duration">
+                    <span>⏱️ Duration: </span>
+                    <span id="exerciseDuration">5-10 minutes</span>
+                </div>
+                
+                <!-- GIF Placeholder -->
+                <div class="exercise-gif-container" id="exerciseGif">
+                    <!-- GIF will be inserted here -->
+                </div>
+                
+                <div class="exercise-content">
+                    <div class="exercise-section">
+                        <h3>What You'll Do</h3>
+                        <p class="exercise-description" id="exerciseDescription">Loading exercise...</p>
+                    </div>
+
+                    <div class="exercise-section">
+                        <h3>Step-by-Step Guide</h3>
+                        <ol class="exercise-steps" id="exerciseSteps">
+                            <li>Loading steps...</li>
+                        </ol>
+                    </div>
+
+                    <div class="exercise-section">
+                        <h3>Benefits</h3>
+                        <ul class="exercise-benefits" id="exerciseBenefits">
+                            <li>Loading benefits...</li>
+                        </ul>
+                    </div>
+
+                    <div class="exercise-section">
+                        <h3>Tips for Success</h3>
+                        <ul class="exercise-tips" id="exerciseTips">
+                            <li>Loading tips...</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="exercise-details">
+                    <!-- Emotion badge will be inserted here -->
+                </div>
+
+                <div class="exercise-actions">
+                    <button class="btn btn-primary" id="startExerciseBtn">Start Exercise</button>
+                    <button class="btn btn-secondary" id="newExerciseBtn">Refresh Recommendation</button>
+                </div>
+            </div>
+
+            <div class="exercise-timer" id="exerciseTimer" style="display: none;">
+                <div class="timer-display">
+                    <div class="timer-circle">
+                        <span id="timerMinutes">05</span>:<span id="timerSeconds">00</span>
+                    </div>
+                </div>
+                <div class="timer-controls">
+                    <button class="btn btn-secondary" id="pauseTimerBtn">Pause</button>
+                    <button class="btn btn-secondary" id="stopTimerBtn">Stop</button>
+                </div>
+            </div>
+
+            <div class="exercise-info-section">
+                <h3>About This Recommendation</h3>
+                <p class="exercise-info-text">
+                    This exercise is recommended based on the most recent emotion detected during your chat sessions. 
+                    If you haven't chatted yet, we default to a neutral exercise. 
+                    The recommendation updates based on your latest emotional state.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p>&copy; 2026 AI Mental Health Platform. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="exercise.js"></script>
+    <script src="nav.js"></script>
+</body>
+</html>
