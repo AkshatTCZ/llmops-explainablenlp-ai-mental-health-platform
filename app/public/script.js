@@ -1,5 +1,5 @@
 // API Configuration
-const FASTAPI_BASE_URL = 'http://127.0.0.1:8000';
+const FASTAPI_BASE_URL = 'https://glorifier-usual-footless.ngrok-free.dev';
 const PREDICT_ENDPOINT = `${FASTAPI_BASE_URL}/predict`;
 const EXPLAIN_ENDPOINT = `${FASTAPI_BASE_URL}/explain`;
 
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupEventListeners();
     checkHealth();
     updateCharCount();
-    
+
     // Try to restore previous conversation
     const restored = restoreMessagesFromStorage();
     if (restored) {
@@ -45,14 +45,14 @@ document.addEventListener('DOMContentLoaded', () => {
 function setupEventListeners() {
     sendBtn.addEventListener('click', handleSend);
     resetBtn.addEventListener('click', handleReset);
-    
+
     messageInput.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' && !e.shiftKey) {
             e.preventDefault();
             handleSend();
         }
     });
-    
+
     messageInput.addEventListener('input', () => {
         updateCharCount();
         autoResizeTextarea();
@@ -69,7 +69,7 @@ function autoResizeTextarea() {
 function updateCharCount() {
     const count = messageInput.value.length;
     charCount.textContent = `${count} / 1000`;
-    
+
     if (count > 900) {
         charCount.style.color = 'var(--warning)';
     } else if (count > 750) {
@@ -82,32 +82,32 @@ function updateCharCount() {
 // Handle Send
 async function handleSend() {
     const message = messageInput.value.trim();
-    
+
     if (!message || isProcessing) {
         return;
     }
-    
+
     // Track short-term memory separately from the UI so the backend gets recent context.
     appendToChatHistory('user', message);
 
     // Add user message to chat
     addMessage('user', message);
-    
+
     // Clear input
     messageInput.value = '';
     updateCharCount();
     autoResizeTextarea();
-    
+
     // Disable input
     setProcessing(true);
-    
+
     // Show typing indicator
     showTypingIndicator();
-    
+
     // Create abort controller for timeout (6 minutes)
     const controller = new AbortController();
     let timeoutId = setTimeout(() => controller.abort(), 360000); // 6 minutes
-    
+
     try {
         const response = await fetch(PREDICT_ENDPOINT, {
             method: 'POST',
@@ -121,22 +121,22 @@ async function handleSend() {
             }),
             signal: controller.signal
         });
-        
+
         if (timeoutId) {
             clearTimeout(timeoutId);
             timeoutId = null;
         }
-        
+
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        
+
         const data = await response.json();
-        
+
         if (data.error) {
             throw new Error(data.error);
         }
-        
+
         // Add assistant response and preserve originating user text for explainability.
         appendToChatHistory('assistant', data.response);
         adviceGiven = true;
@@ -149,14 +149,14 @@ async function handleSend() {
         if (typeof data.emotion === 'string' && data.emotion.trim()) {
             localStorage.setItem(`lastEmotion_${sessionId}`, data.emotion);
         }
-        
+
         // Update emotion display
         if (data.emotion) {
             updateEmotionDisplay(data.emotion);
         }
-        
+
         updateStatus('ready', 'Ready');
-        
+
     } catch (error) {
         if (timeoutId) {
             clearTimeout(timeoutId);
@@ -180,7 +180,7 @@ async function handleReset() {
     if (!confirm('Are you sure you want to start a new conversation? This will clear your chat history.')) {
         return;
     }
-    
+
     // Clear chat messages
     chatMessages.innerHTML = `
         <div class="welcome-message">
@@ -196,20 +196,20 @@ async function handleReset() {
             </div>
         </div>
     `;
-    
+
     // Clear old session messages from localStorage
     localStorage.removeItem(`chatMessages_${sessionId}`);
-    
+
     // Create new session and store it
     const oldSessionId = sessionId;
     sessionId = `session_${Date.now()}`;
     localStorage.setItem('chatSessionId', sessionId);
     chatHistory = [];
     adviceGiven = false;
-    
+
     emotionDisplay.textContent = '';
     updateStatus('ready', 'Ready');
-    
+
     // No backend reset needed; inference is stateless in FastAPI endpoints.
 }
 
@@ -217,7 +217,7 @@ async function handleReset() {
 function saveMessagesToStorage() {
     const messages = [];
     const messageElements = chatMessages.querySelectorAll('.message');
-    
+
     messageElements.forEach(msg => {
         const role = msg.classList.contains('user') ? 'user' : 'assistant';
         const text = msg.querySelector('.message-text')?.textContent || '';
@@ -228,24 +228,24 @@ function saveMessagesToStorage() {
 
         messages.push({ role, text, emotion, sourceText, explanationText });
     });
-    
+
     localStorage.setItem(`chatMessages_${sessionId}`, JSON.stringify(messages));
 }
 
 // Restore messages from localStorage
 function restoreMessagesFromStorage() {
     const savedMessages = localStorage.getItem(`chatMessages_${sessionId}`);
-    
+
     if (savedMessages) {
         try {
             const messages = JSON.parse(savedMessages);
-            
+
             // Clear welcome message
             const welcomeMessage = chatMessages.querySelector('.welcome-message');
             if (welcomeMessage) {
                 welcomeMessage.remove();
             }
-            
+
             // Restore all messages
             messages.forEach(msg => {
                 addMessageToDOM(msg.role, msg.text, msg.emotion, false, msg.sourceText, msg.explanationText); // false = don't save again
@@ -258,7 +258,7 @@ function restoreMessagesFromStorage() {
 
             // Best-effort restore for Book page (may be missing for old sessions).
             // Important words are stored per-session when responses arrive.
-            
+
             scrollToBottom();
             return true;
         } catch (error) {
@@ -277,13 +277,13 @@ function addMessageToDOM(role, text, emotion = null, saveToStorage = true, sourc
         messageDiv.dataset.messageId = `msg_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
         messageDiv.dataset.sourceText = sourceText;
     }
-    
+
     const messageContent = document.createElement('div');
     messageContent.className = 'message-content';
-    
+
     const messageHeader = document.createElement('div');
     messageHeader.className = 'message-header';
-    
+
     if (role === 'user') {
         messageHeader.innerHTML = '<span>You</span>';
     } else {
@@ -295,11 +295,11 @@ function addMessageToDOM(role, text, emotion = null, saveToStorage = true, sourc
             messageHeader.appendChild(emotionTag);
         }
     }
-    
+
     const messageText = document.createElement('div');
     messageText.className = 'message-text';
     messageText.textContent = text;
-    
+
     messageContent.appendChild(messageHeader);
     messageContent.appendChild(messageText);
 
@@ -327,16 +327,16 @@ function addMessageToDOM(role, text, emotion = null, saveToStorage = true, sourc
     }
 
     messageDiv.appendChild(messageContent);
-    
+
     // Remove welcome message if it exists
     const welcomeMessage = chatMessages.querySelector('.welcome-message');
     if (welcomeMessage) {
         welcomeMessage.remove();
     }
-    
+
     chatMessages.appendChild(messageDiv);
     scrollToBottom();
-    
+
     // Save to localStorage if requested
     if (saveToStorage) {
         saveMessagesToStorage();
@@ -380,7 +380,7 @@ function setProcessing(processing) {
     isProcessing = processing;
     sendBtn.disabled = processing;
     messageInput.disabled = processing;
-    
+
     if (processing) {
         sendBtn.style.opacity = '0.5';
         updateStatus('processing', 'Processing...');
@@ -393,10 +393,10 @@ function setProcessing(processing) {
 // Update Status
 function updateStatus(type, text) {
     statusText.textContent = text;
-    
+
     // Remove all status classes
     statusDot.classList.remove('ready', 'processing', 'error');
-    
+
     // Add the appropriate class
     statusDot.classList.add(type);
 }
@@ -407,7 +407,7 @@ function updateEmotionDisplay(emotion) {
         emotionDisplay.textContent = '';
         return;
     }
-    
+
     const emotionEmojis = {
         'joy': '😊',
         'sadness': '😢',
@@ -415,7 +415,7 @@ function updateEmotionDisplay(emotion) {
         'anger': '😠',
         'neutral': '😐'
     };
-    
+
     const emoji = emotionEmojis[emotion.toLowerCase()] || '😐';
     emotionDisplay.textContent = `${emoji} ${emotion}`;
     emotionDisplay.className = `emotion-display emotion-${emotion.toLowerCase()}`;

@@ -4,147 +4,153 @@
 // Each emotion has ONE placeholder exercise that you can fill in later
 const exercisesByEmotion = {
     'neutral': {
-    title: "5-Minute Mindful Check-In",
-    category: "Mindfulness",
-    icon: "🧘",
-    duration: "5 minutes",
-    description: "A grounding exercise that helps you check in with your body, thoughts, and surroundings to maintain emotional balance.",
-    gif: "exercisegifs/neutral.gif",
-    steps: [
-        "Sit comfortably and take a slow, deep breath.",
-        "Bring attention to your body—notice any tension or relaxation.",
-        "Acknowledge your current thoughts without judgment.",
-        "Observe the sounds, sensations, and environment around you."
-    ],
-    benefits: [
-        "Improves self-awareness",
-        "Promotes calm and clarity",
-        "Enhances emotional balance"
-    ],
-    tips: [
-        "Try doing this between tasks for a mental reset.",
-        "Keep your breathing slow and steady."
-    ]
-}
-,
+        title: "5-Minute Mindful Check-In",
+        category: "Mindfulness",
+        icon: "🧘",
+        duration: "5 minutes",
+        description: "A grounding exercise that helps you check in with your body, thoughts, and surroundings to maintain emotional balance.",
+        gif: "exercisegifs/neutral.gif",
+        steps: [
+            "Sit comfortably and take a slow, deep breath.",
+            "Bring attention to your body—notice any tension or relaxation.",
+            "Acknowledge your current thoughts without judgment.",
+            "Observe the sounds, sensations, and environment around you."
+        ],
+        benefits: [
+            "Improves self-awareness",
+            "Promotes calm and clarity",
+            "Enhances emotional balance"
+        ],
+        tips: [
+            "Try doing this between tasks for a mental reset.",
+            "Keep your breathing slow and steady."
+        ]
+    }
+    ,
     'joy': {
-    title: "Gratitude Reflection",
-    category: "Positivity",
-    icon: "🌞",
-    duration: "3–5 minutes",
-    description: "A joyful exercise that deepens positive emotions by reflecting on things you appreciate.",
-    gif: "exercisegifs/joy.gif",
-    steps: [
-        "Find a comfortable spot and take a deep breath.",
-        "Think of three things that made you smile today.",
-        "Write down why each one matters to you.",
-        "Take a moment to feel that warmth in your chest."
-    ],
-    benefits: [
-        "Boosts mood and positivity",
-        "Strengthens emotional resilience",
-        "Builds long-term happiness habits"
-    ],
-    tips: [
-        "Focus on small, everyday moments.",
-        "Try sharing one of your gratitudes with someone."
-    ]
-}
-,
+        title: "Gratitude Reflection",
+        category: "Positivity",
+        icon: "🌞",
+        duration: "3–5 minutes",
+        description: "A joyful exercise that deepens positive emotions by reflecting on things you appreciate.",
+        gif: "exercisegifs/joy.gif",
+        steps: [
+            "Find a comfortable spot and take a deep breath.",
+            "Think of three things that made you smile today.",
+            "Write down why each one matters to you.",
+            "Take a moment to feel that warmth in your chest."
+        ],
+        benefits: [
+            "Boosts mood and positivity",
+            "Strengthens emotional resilience",
+            "Builds long-term happiness habits"
+        ],
+        tips: [
+            "Focus on small, everyday moments.",
+            "Try sharing one of your gratitudes with someone."
+        ]
+    }
+    ,
     'sadness': {
-    title: "5-4-3-2-1 Grounding Technique",
-    category: "Grounding",
-    icon: "🌦️",
-    duration: "2–4 minutes",
-    description: "A soothing grounding method that helps you reconnect to the present moment during emotional heaviness.",
-    gif: "exercisegifs/sadness.gif",
-    steps: [
-        "Name 5 things you can see around you.",
-        "Name 4 things you can touch right now.",
-        "Name 3 things you can hear.",
-        "Name 2 things you can smell.",
-        "Name 1 thing you can taste."
-    ],
-    benefits: [
-        "Reduces overwhelming emotions",
-        "Creates a sense of safety",
-        "Helps refocus your mind"
-    ],
-    tips: [
-        "Speak the steps out loud for stronger grounding.",
-        "Move slowly and intentionally through each sense."
-    ]
-}
-,
+        title: "5-4-3-2-1 Grounding Technique",
+        category: "Grounding",
+        icon: "🌦️",
+        duration: "2–4 minutes",
+        description: "A soothing grounding method that helps you reconnect to the present moment during emotional heaviness.",
+        gif: "exercisegifs/sadness.gif",
+        steps: [
+            "Name 5 things you can see around you.",
+            "Name 4 things you can touch right now.",
+            "Name 3 things you can hear.",
+            "Name 2 things you can smell.",
+            "Name 1 thing you can taste."
+        ],
+        benefits: [
+            "Reduces overwhelming emotions",
+            "Creates a sense of safety",
+            "Helps refocus your mind"
+        ],
+        tips: [
+            "Speak the steps out loud for stronger grounding.",
+            "Move slowly and intentionally through each sense."
+        ]
+    }
+    ,
     'fear': {
-    title: "4-7-8 Breathing",
-    category: "Breathwork",
-    icon: "🌙",
-    duration: "3 minutes",
-    description: "A calming breathing pattern designed to lower anxiety and steady your nervous system.",
-    gif: "exercisegifs/fear.gif",
-    steps: [
-        "Inhale quietly through your nose for 4 seconds.",
-        "Hold the breath for 7 seconds.",
-        "Exhale slowly through your mouth for 8 seconds.",
-        "Repeat the cycle 4–6 times."
-    ],
-    benefits: [
-        "Reduces anxiety and tension",
-        "Slows heart rate",
-        "Promotes relaxation"
-    ],
-    tips: [
-        "Keep your shoulders relaxed during breathing.",
-        "Use this before stressful conversations or events."
-    ]
-}
-,
+        title: "4-7-8 Breathing",
+        category: "Breathwork",
+        icon: "🌙",
+        duration: "3 minutes",
+        description: "A calming breathing pattern designed to lower anxiety and steady your nervous system.",
+        gif: "exercisegifs/fear.gif",
+        steps: [
+            "Inhale quietly through your nose for 4 seconds.",
+            "Hold the breath for 7 seconds.",
+            "Exhale slowly through your mouth for 8 seconds.",
+            "Repeat the cycle 4–6 times."
+        ],
+        benefits: [
+            "Reduces anxiety and tension",
+            "Slows heart rate",
+            "Promotes relaxation"
+        ],
+        tips: [
+            "Keep your shoulders relaxed during breathing.",
+            "Use this before stressful conversations or events."
+        ]
+    }
+    ,
     'anger': {
-    title: "Box Breathing",
-    category: "Anger Regulation",
-    icon: "🔥",
-    duration: "2–3 minutes",
-    description: "A structured breathing exercise that helps release tension and regain emotional control when anger rises.",
-    gif: "exercisegifs/anger.gif",
-    steps: [
-        "Inhale through your nose for 4 seconds.",
-        "Hold your breath for 4 seconds.",
-        "Exhale through your mouth for 4 seconds.",
-        "Hold again for 4 seconds.",
-        "Repeat for 4–5 rounds."
-    ],
-    benefits: [
-        "Lowers physical symptoms of anger",
-        "Enhances emotional control",
-        "Improves focus and clarity"
-    ],
-    tips: [
-        "Try matching your breath to a visual square.",
-        "Relax your jaw and hands to release tension."
-    ]
-}
+        title: "Box Breathing",
+        category: "Anger Regulation",
+        icon: "🔥",
+        duration: "2–3 minutes",
+        description: "A structured breathing exercise that helps release tension and regain emotional control when anger rises.",
+        gif: "exercisegifs/anger.gif",
+        steps: [
+            "Inhale through your nose for 4 seconds.",
+            "Hold your breath for 4 seconds.",
+            "Exhale through your mouth for 4 seconds.",
+            "Hold again for 4 seconds.",
+            "Repeat for 4–5 rounds."
+        ],
+        benefits: [
+            "Lowers physical symptoms of anger",
+            "Enhances emotional control",
+            "Improves focus and clarity"
+        ],
+        tips: [
+            "Try matching your breath to a visual square.",
+            "Relax your jaw and hands to release tension."
+        ]
+    }
 
 };
 
-let currentEmotion = 'neutral';
 let timerInterval = null;
 let timerSeconds = 0;
 let isTimerRunning = false;
 let isTimerPaused = false;
 
-// Fetch the most recent emotion from the API
 function fetchMostRecentEmotion() {
-    const emotion = localStorage.getItem("safe_emotion");
-
-    console.log("Exercise emotion (from localStorage):", emotion);
-
-    return emotion || 'neutral';
+    const sessionId = localStorage.getItem("chatSessionId");
+    let emotion = null;
+    
+    if (sessionId) {
+        emotion = localStorage.getItem(`lastEmotion_${sessionId}`);
+    }
+    if (!emotion) {
+        emotion = localStorage.getItem("lastEmotion");
+    }
+    
+    console.log("Exercise emotion:", emotion);
+    return emotion || "neutral";
 }
 
 // Get exercise based on emotion
 function getExerciseForEmotion(emotion) {
-    return exercisesByEmotion[emotion] || exercisesByEmotion['neutral'];
+    const normalized = (emotion || "").toLowerCase().trim();
+    return exercisesByEmotion[normalized] || exercisesByEmotion["neutral"];
 }
 
 function displayExercise(exercise, emotion) {
@@ -153,7 +159,7 @@ function displayExercise(exercise, emotion) {
     document.getElementById('exerciseIcon').textContent = exercise.icon;
     document.getElementById('exerciseDuration').textContent = exercise.duration;
     document.getElementById('exerciseDescription').textContent = exercise.description;
-    
+
     // Display gif or placeholder
     const gifContainer = document.getElementById('exerciseGif');
     if (exercise.gif && exercise.gif !== 'placeholder-gif-url-neutral.gif') {
@@ -166,7 +172,7 @@ function displayExercise(exercise, emotion) {
             </div>
         </div>`;
     }
-    
+
     // Display steps
     const stepsEl = document.getElementById('exerciseSteps');
     stepsEl.innerHTML = '';
@@ -175,7 +181,7 @@ function displayExercise(exercise, emotion) {
         li.textContent = step;
         stepsEl.appendChild(li);
     });
-    
+
     // Display benefits
     const benefitsEl = document.getElementById('exerciseBenefits');
     benefitsEl.innerHTML = '';
@@ -184,7 +190,7 @@ function displayExercise(exercise, emotion) {
         li.textContent = benefit;
         benefitsEl.appendChild(li);
     });
-    
+
     // Display tips
     const tipsEl = document.getElementById('exerciseTips');
     tipsEl.innerHTML = '';
@@ -193,7 +199,7 @@ function displayExercise(exercise, emotion) {
         li.textContent = tip;
         tipsEl.appendChild(li);
     });
-    
+
     // Update or create emotion badge
     let emotionBadge = document.querySelector('.emotion-badge-exercise');
     if (!emotionBadge) {
@@ -213,12 +219,12 @@ function startTimer(durationMinutes = 5) {
     isTimerRunning = true;
     isTimerPaused = false;
     document.getElementById('exerciseTimer').style.display = 'block';
-    
+
     timerInterval = setInterval(() => {
         if (!isTimerPaused) {
             timerSeconds--;
             updateTimerDisplay();
-            
+
             if (timerSeconds <= 0) {
                 stopTimer();
                 alert('Time\'s up! Great job completing the exercise.');
@@ -251,28 +257,23 @@ function updateTimerDisplay() {
 }
 
 // Initialize
-document.addEventListener('DOMContentLoaded', async () => {
-    // Fetch the most recent emotion
-    currentEmotion = await fetchMostRecentEmotion();
-    console.log('Most recent emotion for exercise:', currentEmotion);
-    
-    // Get and display exercise for this emotion
+document.addEventListener('DOMContentLoaded', () => {
+    const currentEmotion = fetchMostRecentEmotion();
     const exercise = getExerciseForEmotion(currentEmotion);
     displayExercise(exercise, currentEmotion);
-    
+
     // Event listeners
     document.getElementById('startExerciseBtn').addEventListener('click', () => {
         const duration = parseInt(prompt('How many minutes? (default: 5)', '5') || '5');
         startTimer(duration);
     });
-    
-    document.getElementById('newExerciseBtn').addEventListener('click', async () => {
-        // Fetch fresh emotion and reload exercise
-        currentEmotion = await fetchMostRecentEmotion();
+
+    document.getElementById('newExerciseBtn').addEventListener('click', () => {
+        const currentEmotion = fetchMostRecentEmotion();
         const exercise = getExerciseForEmotion(currentEmotion);
         displayExercise(exercise, currentEmotion);
     });
-    
+
     document.getElementById('pauseTimerBtn').addEventListener('click', pauseTimer);
     document.getElementById('stopTimerBtn').addEventListener('click', stopTimer);
 });
